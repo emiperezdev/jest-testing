@@ -16,6 +16,14 @@ describe("greet", () => {
   it("should return the greeting message", () => {
     const result = lib.greet("Mosh");
     expect(result).toMatch(/Mosh/);
-    expect(result).toContain('Mosh');
+    expect(result).toContain("Mosh");
+  });
+});
+
+describe("getCurrencies", () => {
+  it("should return supported currencies", () => {
+    const result = lib.getCurrencies();
+
+    expect(result).toEqual(expect.arrayContaining(["USD", "AUD", "EUR"]));
   });
 });
