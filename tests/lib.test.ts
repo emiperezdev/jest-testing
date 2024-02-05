@@ -1,3 +1,4 @@
+import exp from "constants";
 import * as lib from "../src/lib";
 
 describe("absolute", () => {
@@ -34,5 +35,13 @@ describe("getProduct", () => {
     expect(result).toEqual({ id: 1, price: 10 });
     expect(result).toMatchObject({ id: 1, price: 10 });
     expect(result).toHaveProperty("id", 1);
+  });
+});
+
+describe("registerUser", () => {
+  it("should return a user object", () => {
+    const result = lib.registerUser("Mosh");
+    expect(result).toMatchObject({ username: "Mosh" });
+    expect(result.id).toBeGreaterThan(0);
   });
 });
